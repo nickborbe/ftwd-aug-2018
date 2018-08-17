@@ -1,0 +1,31 @@
+img{
+    width: 300px;
+}
+
+.green{
+    background-color: greenyellow;
+}
+
+.skinny{
+    margin: 0 120px;
+}
+
+
+.lots-of-borders{
+    border: 3px solid crimson;
+}
+
+
+.rect{
+    width: 100px;
+    height: 100px;
+}
+
+.large{
+    width: 300px;
+    height: 300px;
+}
+
+.blue{
+    background-color: aqua;
+}
