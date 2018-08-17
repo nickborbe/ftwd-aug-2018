@@ -1,0 +1,35 @@
+.main-thing{
+    display: flex;
+    height: 300px;
+    justify-content: space-between;
+}
+
+.text{
+    max-width: 200px;
+}
+
+
+img{
+    width: 400px;
+}
+
+.rect{
+    width: 100px;
+    height: 80px;
+}
+
+.blue{
+    background-color: aqua;
+}
+
+.red{
+    background-color: crimson;
+}
+
+
+
+@media (max-width: 600px){
+    img{
+        display: none;
+    }
+}
