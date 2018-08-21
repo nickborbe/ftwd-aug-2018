@@ -1,7 +1,5 @@
 window.onload = function(){
 
-  
-  
   var calculatePriceButton = document.getElementById('calc');
 
   calculatePriceButton.onclick = () => {
@@ -14,12 +12,13 @@ window.onload = function(){
       
       
       var quantity = rows[i].querySelector('input').value;
+
+      
       var pricePerUnit = Number(rows[i].querySelector('.product-price').innerHTML.substr(1));
       var tempTotal = quantity * pricePerUnit;
-      realTotal+=tempTotal;
-
+      realTotal += tempTotal
       rows[i].querySelector('.product-calculated-price').innerHTML = '$'+tempTotal.toFixed(2);
-
+      
 
     }
       document.getElementById('real-actual-total').innerHTML = '$'+realTotal.toFixed(2);
