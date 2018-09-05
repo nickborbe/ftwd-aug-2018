@@ -1,0 +1,17 @@
+{
+  "name": "dynamic-views-hbs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.3",
+    "hbs": "^4.0.1",
+    "punkapi-javascript-wrapper": "^1.0.2"
+  }
+}

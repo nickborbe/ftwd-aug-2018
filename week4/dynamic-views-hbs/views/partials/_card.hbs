@@ -1,0 +1,11 @@
+<div class="card" style="width: 33.333%;">
+      <img class="card-img-top" src="{{this.photo}}" alt="">
+      <div class="card-body">
+        <h5 class="card-title">{{this.name}} {{this.lastName}}</h5>
+        <p class="card-text">{{this.team}}</p>
+      </div>
+
+        {{#if this.mvp}}
+            <h5>**** This player is a former MVP Winner*****</h5>
+        {{/if}}
+</div>

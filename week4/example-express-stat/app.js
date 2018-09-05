@@ -11,21 +11,16 @@ app.use(express.static('public'));
 
 // our first Route:
 app.get('/', (request, response, next) => {
-    //talk to mongo
-    // grab the user info from mongo
-    // find all the facebook posts made by that users friends
-    // const blah = all those facebookPosts
-            //    |
-            //    v
 
-  response.send('<h1>Welcome Ironhacker. :)</h1>');
+  response.sendFile(__dirname + '/views/home.html');
+
 });
 
-app.get('/blah', (request, response, next) => {
-    response.send('this is the blah page');
+app.get('/about', (request, response, next) => {
+  response.sendFile(__dirname + '/views/about.html');
   });
 
-  app.get('/wow', (request, response, next) => {
+  app.get('/photos', (request, response, next) => {
     response.sendFile(__dirname + '/views/theWowPage.html')
   });
 
