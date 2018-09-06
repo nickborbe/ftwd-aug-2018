@@ -1,16 +1,17 @@
 const mongoose = require('mongoose');
+const Schema = mongoose.Schema
 
 
 
 mongoose.connect('mongodb://localhost/mongoose-intro-example');
 
 
-const wolfSchema = {
-     name: {type: String},
+const wolfSchema = new Schema({
+     name: {type: String, required: true},
      furQuality: String,
      packName: String,
      age:{ type: Number, min: 0, max: 50}
-     }
+     })
 
 
 const Wolf = mongoose.model('Wolf', wolfSchema );
