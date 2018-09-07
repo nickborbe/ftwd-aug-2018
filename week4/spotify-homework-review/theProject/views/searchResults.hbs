@@ -1,0 +1,17 @@
+<h1>Search Results</h1>
+
+<h2>
+{{theArtist.name}}
+</h2>
+<button><a href="/showMeTheAlbums/{{theArtist.id}}/{{theArtist.name}}">  See {{theArtist.name}}'s Albums </a></button>
+
+<h4>Genres:</h4>
+    {{#each theArtist.genres}}
+    <p>{{this}}</p>
+    {{/each}}
+
+
+    <img src="{{theArtist.images.0.url}}" alt="picture of {{theArtist.name}}">
+
+
+
