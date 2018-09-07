@@ -8,3 +8,13 @@
 
 
 <p>{{theBook.description}}</p>
+
+<a href="/books/edit/{{theBook._id}}">Edit This Book</a>
+
+
+<form action="/books/delete/{{theBook._id}}" method="POST">
+    <button>Delete This Book</button>
+</form>
+
+
+
