@@ -67,8 +67,10 @@ const books = [
   }
 ]
 
-Book.create(books, (err) => {
-  if (err) { throw(err) }
+Book.create(books)
+.then((books)=>{
   console.log(`Created ${books.length} books`)
-  mongoose.connection.close()
-});
+})
+.catch((err)=>{
+  console.log(err)
+})
