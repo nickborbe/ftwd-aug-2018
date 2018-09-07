@@ -1,0 +1,18 @@
+this is the list of books
+
+
+{{#each listOfBooks}}
+
+
+<div>
+{{this.name}}
+by
+{{this.author}}
+<a href="/books/{{this._id}}">See Details</a>
+</div>
+
+
+
+
+
+{{/each}}
