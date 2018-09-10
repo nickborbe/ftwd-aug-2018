@@ -59,4 +59,8 @@ const celebrityRoutesFile = require('./routes/celebrities');
 app.use('/', celebrityRoutesFile);
 
 
+const movies = require('./routes/movies');
+app.use('/', movies);
+
+
 module.exports = app;

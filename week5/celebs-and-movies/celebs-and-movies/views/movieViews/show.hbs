@@ -1,0 +1,27 @@
+
+
+    <h1>Welcome To {{movie.title}}'s Page!</h1>
+
+
+    <h6>
+    occupation: {{movie.genre}}
+
+    </h6>
+
+    <img src="{{movie.image}}" alt="">
+
+
+    <h2>Celebrities In This Movie</h2>
+
+           <ul>
+            {{#each movie.cast}}
+            <li>{{this.name}}</li>
+            {{/each}}
+        </ul>
+    
+
+
+
+        <a href="/movies/edit/{{movie._id}}">
+            <button>Edit This Movie</button>
+        </a>

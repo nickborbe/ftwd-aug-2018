@@ -94,7 +94,7 @@ router.post('/celebrities/update/:celebrityID', (req, res, next)=>{
 
 
 router.get('/celebrities/:theid', (req, res, next)=>{
-    Celebrity.findById(req.params.theid)
+    Celebrity.findById(req.params.theid).populate('movies')
     .then((theCelebrity)=>{
         res.render('celebrityViews/show', {celeb: theCelebrity})
     })

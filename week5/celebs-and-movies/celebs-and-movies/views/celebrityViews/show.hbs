@@ -13,6 +13,14 @@
 
     </p>
 
+    <h3>Movies that {{celeb.name}} has appeared in</h3>
+
+        <ul>
+            {{#each celeb.movies}}
+            <li>{{this.title}}</li>
+            {{/each}}
+        </ul>
+
         <a href="/celebrities/edit/{{celeb._id}}">
             <button>Edit This Celebrity</button>
         </a>
