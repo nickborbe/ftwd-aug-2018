@@ -10,8 +10,10 @@ const Movie        = require('../models/Movie');
 router.get('/movies', (req, res, next) => {
     Movie.find()
     .then((listOfMovies)=>{
+
+        console.log('=-=-=-=-=-=-=-=-=-', req.session)
         
-        res.render('movieViews/index', { theList: listOfMovies });
+        res.render('movieViews/index', { theList: listOfMovies, theUser: req.session.currentUser });
     })
     .catch((err)=>{
         next(err);
@@ -22,6 +24,10 @@ router.get('/movies', (req, res, next) => {
 
 
 router.get('/movies/new', (req, res, next)=>{
+    if(!req.session.currentUser){
+        res.redirect('/movies')
+        return
+    }
     res.render('movieViews/create');
 });
 

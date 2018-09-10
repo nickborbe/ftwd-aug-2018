@@ -9,6 +9,9 @@ const mongoose     = require('mongoose');
 const logger       = require('morgan');
 const path         = require('path');
 
+const session    = require("express-session");
+const MongoStore = require("connect-mongo")(session);
+
 
 mongoose.Promise = Promise;
 mongoose
@@ -32,12 +35,26 @@ app.use(cookieParser());
 
 // Express View engine setup
 
+
+
+
 app.use(require('node-sass-middleware')({
   src:  path.join(__dirname, 'public'),
   dest: path.join(__dirname, 'public'),
   sourceMap: true
 }));
       
+
+app.use(session({
+  secret: "basic-auth-secret",
+  cookie: { maxAge: 60000 },
+  store: new MongoStore({
+    mongooseConnection: mongoose.connection,
+    ttl: 24 * 60 * 60 
+  })
+}));
+
+
 
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
@@ -61,6 +78,10 @@ app.use('/', celebrityRoutesFile);
 
 const movies = require('./routes/movies');
 app.use('/', movies);
+
+
+const theUserRoutes = require('./routes/authRoutes')
+app.use('/', theUserRoutes)
 
 
 module.exports = app;
