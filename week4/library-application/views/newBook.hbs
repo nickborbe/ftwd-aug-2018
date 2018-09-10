@@ -10,7 +10,15 @@
     <input type="text" name="description">
 
     <label for="">Author</label>
-    <input type="text" name="theAuthor">
+    <select name="theAuthor">
+        {{#each authors}}
+      <option value="{{this._id}}">{{this.name}}</option>
+        {{/each}}
+
+      
+
+    </select>
+ 
 
     <label for="">Rating</label>
     <input type="number" name="rating">

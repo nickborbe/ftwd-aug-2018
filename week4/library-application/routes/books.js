@@ -1,11 +1,12 @@
 const express = require('express');
 const router  = express.Router();
 const Book    = require('../models/book')
+const Author    = require('../models/author')
 
 
 /* GET home page */
 router.get('/books', (req, res, next) => {
-    Book.find()
+    Book.find().populate('author')
     .then((theStuffWeGetBack)=>{
         
         res.render('listOfBooks', {listOfBooks: theStuffWeGetBack})
@@ -19,7 +20,15 @@ router.get('/books', (req, res, next) => {
 
 
 router.get('/books/new', (req, res, next)=>{
-    res.render('newBook');
+    Author.find()
+    .then((allTheAuthors)=>{
+        res.render('newBook', {authors: allTheAuthors});
+    })
+    .catch((err)=>{
+        next(err);
+    })
+
+
 })
 
 
