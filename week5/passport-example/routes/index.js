@@ -10,8 +10,7 @@ router.get('/', (req, res, next) => {
 
 
 router.get('/coolpage' , ensureLogin.ensureLoggedIn('/signup'),(req, res, next)=>{
-  console.log('=-=-=-=-=--=-', req.flash())
-  res.render('coolpage')
+  res.render('coolpage', {message: req.flash('success')})
 })
 
 

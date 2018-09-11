@@ -63,6 +63,7 @@ router.get("/signup", (req, res, next) => {
     successRedirect: "/coolpage",
     failureRedirect: "/login",
     failureFlash: true,
+    successFlash: true,
     passReqToCallback: true
   }));
 
