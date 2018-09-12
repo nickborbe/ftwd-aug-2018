@@ -84,6 +84,10 @@ const theUserRoutes = require('./routes/authRoutes')
 app.use('/', theUserRoutes)
 
 
+const theRoutesForApiStuff = require('./routes/apiroutes')
+app.use('/api', theRoutesForApiStuff)
+
+
 
 
 module.exports = app;
