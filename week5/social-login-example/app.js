@@ -42,7 +42,7 @@ app.use(require('node-sass-middleware')({
   dest: path.join(__dirname, 'public'),
   sourceMap: true
 }));
-      
+
 
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
@@ -82,6 +82,7 @@ passport.use(new GoogleStrategy({
   clientSecret: process.env.google_client_secret,
   callbackURL: "/auth/google/callback"
 }, (accessToken, refreshToken, profile, done) => {
+  console.log(profile)
   User.findOne({ googleID: profile.id })
   .then((user, err) => {
     if (err) {
