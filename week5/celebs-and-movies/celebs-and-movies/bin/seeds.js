@@ -6,10 +6,10 @@ const Celebrity = require('../models/Celebrity');
 
 
 
-mongoose.Promise = Promise;
-mongoose
-  .connect('mongodb://localhost/celebs-and-movies', {useMongoClient: true})
-  .then(() => {
+// mongoose.Promise = Promise;
+// mongoose
+//   .connect('mongodb://localhost/celebs-and-movies', {useMongoClient: true})
+//   .then(() => {
 
 
 // const tomCruise = {name: "Tom Cruise", occupation: "Crazy Guy Movie Star", catchphrase: "I'm not crazy"}
@@ -30,7 +30,7 @@ mongoose
 
 
 
-        })
+        // })
 //         .catch((err)=>{
 //             console.log(err)
 //         })
