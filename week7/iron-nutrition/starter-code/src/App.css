@@ -1,0 +1,23 @@
+.list{
+  width: 40%;
+}
+
+.add-food-form{
+  width: 400px;
+  border: 1px solid black;
+  border-radius: 3px;
+}
+.add-food-form *{
+  margin: 5px;
+}
+
+.add-new{
+  float: right;
+  margin-right: 40px;
+}
+
+.toggle-btn{
+  float: right;
+}
+
+
