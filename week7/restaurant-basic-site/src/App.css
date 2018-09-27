@@ -1,0 +1,20 @@
+.App {
+  text-align: center;
+}
+
+img{
+  width: 300px;
+}
+.nav-style {
+  text-align: right;
+}
+
+.nav-style li {
+  list-style: none;
+  display: inline;
+  margin: 0 10px;
+}
+
+.nav-style a {
+  text-decoration: none;
+}
