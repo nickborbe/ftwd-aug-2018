@@ -1,0 +1,18 @@
+.App{
+  text-align: center;
+}
+
+.table-thing{
+  display: flex;
+  justify-content: center;
+}
+
+.table-thing *{
+  margin: 5px 25px;
+}
+
+
+.search{
+  width: 300px;
+  margin: 10px;
+}
