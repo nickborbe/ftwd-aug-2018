@@ -10,6 +10,11 @@ const logger       = require('morgan');
 const path         = require('path');
 const cors         = require('cors');
 
+const session       = require('express-session');
+const passport      = require('passport');
+
+require('./config/passport');
+
 
 mongoose.Promise = Promise;
 mongoose
@@ -51,6 +56,16 @@ app.use(favicon(path.join(__dirname, 'public', 'images', 'favicon.ico')));
 app.locals.title = 'Express - Generated with IronGenerator';
 
 
+app.use(session({
+  secret:"some secret goes here",
+  resave: true,
+  saveUninitialized: true
+}));
+
+app.use(passport.initialize());
+app.use(passport.session());
+
+
 app.use(cors({
   credentials: true,
   origin: ['http://localhost:3000']
@@ -64,5 +79,8 @@ app.use('/api', projectRoutes);
 
 const taskRoutes = require('./routes/task-routes');
 app.use('/api', taskRoutes);
+
+const authRoutes = require('./routes/auth-routes');
+app.use('/api', authRoutes);
 
 module.exports = app;
