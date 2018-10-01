@@ -6,12 +6,17 @@ import ProjectDetails from './components/ProjectDetails';
 import Navbar from './components/Navbar';
 import Signup from './components/Signup';
 import Login from './components/Login';
+import AuthService from './components/auth/auth-service';
+
+
 import { Switch, Route } from 'react-router-dom';
 
 class App extends Component {
   constructor(props){
     super(props)
     this.state = { loggedInUser: null };
+    this.service = new AuthService();
+
   }
 
   logMeIn= (userObj) => {
@@ -20,11 +25,28 @@ class App extends Component {
     })
   }
 
+  fetchUser(){
+    if( this.state.loggedInUser === null ){
+      this.service.loggedin()
+      .then(response =>{
+        this.setState({
+          loggedInUser:  response
+        }) 
+      })
+      .catch( err =>{
+        this.setState({
+          loggedInUser:  false
+        }) 
+      })
+    }
+  }
+
 
   render() {
+    this.fetchUser();
     return (
       <div className="App">
-        <Navbar userInSession={this.state.loggedInUser} />
+        <Navbar  setTheUserInTheAppComponent={this.logMeIn} userInSession={this.state.loggedInUser} />
         <Switch>
         <Route exact path="/" render={() => <Login setTheUserInTheAppComponent={this.logMeIn}/>}/>
         <Route exact path='/signup' render={() => <Signup setTheUserInTheAppComponent={this.logMeIn}/>}/>
