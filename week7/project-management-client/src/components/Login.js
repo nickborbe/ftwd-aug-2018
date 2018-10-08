@@ -43,7 +43,7 @@ class Login extends Component {
           <label>Password:</label>
           <input name="password" value={this.state.password} onChange={ e => this.handleChange(e)} />
           
-          <input type="submit" value="Signup" />
+          <input type="submit" value="Login" />
         </form>
   
         <p>Don't have an account? 
